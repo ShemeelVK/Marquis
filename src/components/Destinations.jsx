@@ -62,6 +62,8 @@ const Destinations = () => {
                   src={`https://flagcdn.com/w160/${country.code.toLowerCase()}.png`} 
                   alt={`${country.name} flag`} 
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <span className="text-white font-medium tracking-wide text-sm md:text-base text-center">
