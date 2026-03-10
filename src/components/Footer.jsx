@@ -1,7 +1,42 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md';
+import emailjs from '@emailjs/browser';
 
 const Footer = () => {
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    emailjs
+      .sendForm(
+        'service_1puwad3', // Service ID provided by user
+        'template_mcq1h4s', // Template ID provided by user
+        form.current,
+        'aZzp6i3z6DYNCMEBV' // Public Key provided by user
+      )
+      .then(
+        (result) => {
+          console.log('EmailJS Success:', result.text);
+          setSubmitStatus('success');
+          setIsSubmitting(false);
+          e.target.reset(); // Clear form fields
+          
+          // Clear success message after 5 seconds
+          setTimeout(() => setSubmitStatus(null), 5000);
+        },
+        (error) => {
+          console.error('EmailJS Error:', error.text);
+          setSubmitStatus('error');
+          setIsSubmitting(false);
+        }
+      );
+  };
+
   return (
     <footer id="contact" className="bg-slate-950 pt-20 pb-10 border-t border-slate-800 relative z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,18 +92,19 @@ const Footer = () => {
             <h3 className="text-3xl font-bold text-white mb-2 relative z-10">Speak With Our Team</h3>
             <p className="text-slate-400 mb-8 relative z-10 font-light">Fill out the form below and we'll get back to you shortly.</p>
             
-            <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
+            <form ref={form} className="space-y-6 relative z-10" onSubmit={sendEmail}>
               
               <div className="relative group">
                 <input 
                   type="text" 
-                  id="name" 
+                  id="user_name"
+                  name="user_name" 
                   className="peer w-full bg-transparent border-b-2 border-slate-700 focus:border-[#D4AF37] px-0 py-3 text-white focus:outline-none transition-colors placeholder-transparent"
                   placeholder="Full Name"
                   required
                 />
                 <label 
-                  htmlFor="name" 
+                  htmlFor="user_name" 
                   className="absolute left-0 -top-3.5 text-sm text-[#D4AF37] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-[#D4AF37] cursor-text"
                 >
                   Full Name
@@ -78,13 +114,14 @@ const Footer = () => {
               <div className="relative group">
                 <input 
                   type="email" 
-                  id="email" 
+                  id="user_email"
+                  name="user_email" 
                   className="peer w-full bg-transparent border-b-2 border-slate-700 focus:border-[#D4AF37] px-0 py-3 text-white focus:outline-none transition-colors placeholder-transparent"
                   placeholder="Email Address"
                   required
                 />
                 <label 
-                  htmlFor="email" 
+                  htmlFor="user_email" 
                   className="absolute left-0 -top-3.5 text-sm text-[#D4AF37] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-[#D4AF37] cursor-text"
                 >
                   Email Address
@@ -93,7 +130,8 @@ const Footer = () => {
 
               <div className="relative group pt-4">
                 <textarea 
-                  id="message" 
+                  id="message"
+                  name="message" 
                   rows="3" 
                   className="peer w-full bg-slate-800/30 border border-slate-700 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all resize-none placeholder-transparent"
                   placeholder="Message"
@@ -109,13 +147,28 @@ const Footer = () => {
 
               <button 
                 type="submit" 
-                className="w-full flex items-center justify-center gap-3 bg-[#D4AF37] hover:bg-[#F3E5AB] text-slate-900 font-bold py-4 rounded-2xl transition-all duration-300 shadow-[0_4px_14px_0_rgba(212,175,55,0.25)] hover:shadow-[0_6px_25px_rgba(212,175,55,0.4)] transform hover:-translate-y-1 group"
+                disabled={isSubmitting}
+                className={`w-full flex items-center justify-center gap-3 bg-[#D4AF37] hover:bg-[#F3E5AB] text-slate-900 font-bold py-4 rounded-2xl transition-all duration-300 shadow-[0_4px_14px_0_rgba(212,175,55,0.25)] hover:shadow-[0_6px_25px_rgba(212,175,55,0.4)] ${isSubmitting ? 'opacity-75 cursor-not-allowed' : 'transform hover:-translate-y-1'} group`}
               >
-                <span>Send Message</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                {!isSubmitting && (
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                )}
               </button>
+
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="mt-4 p-3 bg-green-500/10 border border-green-500/50 rounded-lg text-green-400 text-sm text-center">
+                  Message sent successfully! We will get back to you soon.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="mt-4 p-3 bg-red-500/10 border border-red-500/50 rounded-lg text-red-400 text-sm text-center">
+                  Oops! Something went wrong. Please try emailing us directly instead.
+                </div>
+              )}
             </form>
           </div>
 
