@@ -54,7 +54,7 @@ const Footer = () => {
           <div className="space-y-8">
             <div className="h-64 sm:h-80 w-full rounded-2xl overflow-hidden shadow-lg border border-slate-800 relative group">
               <iframe 
-                src="https://maps.google.com/maps?q=52.21536677903252,0.1655925286305302&output=embed" 
+                src="https://maps.google.com/maps?q=Cambridge,UK&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 

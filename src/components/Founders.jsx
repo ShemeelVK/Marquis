@@ -20,7 +20,7 @@ const founders = [
     image: 'https://www.marquisoverseas.com/Mehaq.jpg',
     message: '"We eliminate the borders standing between skilled professionals and life-changing global opportunities. From rigorous employer verification to transparent visa processing, we guarantee absolute peace of mind for every candidate we place."',
     socials: {
-      linkedin: '#',
+      linkedin: '#https://www.linkedin.com/in/mehaq-safvath-1b3905356/',
       facebook: 'https://www.facebook.com/share/18GJqFf2Nd/',
       instagram: 'https://www.instagram.com/mehaq_safvath'
     }
