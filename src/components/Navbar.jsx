@@ -18,6 +18,7 @@ const Navbar = () => {
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Destinations', href: '#destinations' },
+    { name: 'Leadership', href: '#leadership' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -45,6 +46,7 @@ const Navbar = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.2, ease: 'easeOut' }}
             className="flex-shrink-0 cursor-pointer"
             onClick={(e) => scrollToSection(e, '#home')}
           >

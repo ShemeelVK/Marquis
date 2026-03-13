@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 
 // Lazy load below-the-fold components to prioritize initial Hero render & animation
 const About = lazy(() => import('./components/About'));
+const Founders = lazy(() => import('./components/Founders')); // Leadership Section
 const Services = lazy(() => import('./components/Services'));
 const Destinations = lazy(() => import('./components/Destinations'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -21,6 +22,7 @@ function App() {
           <About />
           <Services />
           <Destinations />
+          <Founders />
           <Footer />
         </Suspense>
       </main>

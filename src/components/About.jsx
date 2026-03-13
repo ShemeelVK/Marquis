@@ -22,7 +22,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-24 bg-slate-900 relative">
+    <section id="about" className="py-20 md:py-24 bg-slate-900 relative">
       <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-5 pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,13 +34,13 @@ const About = () => {
           className="max-w-4xl mx-auto"
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37] mb-6 tracking-wide drop-shadow-sm">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37] mb-4 tracking-wide drop-shadow-sm">
               Our Philosophy
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto rounded-full"></div>
           </motion.div>
 
-          <div className="space-y-8 text-lg md:text-xl text-slate-300 leading-relaxed font-light">
+          <div className="space-y-6 text-md md:text-lg lg:text-xl text-slate-300 leading-relaxed font-light">
             <motion.p variants={itemVariants}>
               At <strong className="text-white font-medium">Marquis Overseas International</strong>, we understand that the decision to work abroad represents far more than a professional move — it reflects ambition, responsibility, and the desire to build a stronger future.
             </motion.p>
