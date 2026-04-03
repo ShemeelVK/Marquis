@@ -53,8 +53,9 @@ const Footer = () => {
           {/* Map and Contact Info */}
           <div className="space-y-8">
             <div className="h-64 sm:h-80 w-full rounded-2xl overflow-hidden shadow-lg border border-slate-800 relative group">
+              {/* Standard map view without dark filters as requested */}
               <iframe 
-                src="https://maps.google.com/maps?q=Cambridge,UK&output=embed" 
+                src="https://maps.google.com/maps?q=East+London+Business+Centre,+101+Greenfield+Rd,+London+E1+1EJ,+UK&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
