@@ -17,7 +17,7 @@ const founders = [
   {
     name: 'Mehaq Safvath Chungath',
     title: 'Chairman and Managing Director',
-    image: 'https://www.marquisoverseas.com/Mehaq.jpg',
+    image: 'https://res.cloudinary.com/ddhnk7hzm/image/upload/v1775386498/IMG_4628_4.jpg_pyinqj.jpg',
     message: 'We eliminate the borders standing between skilled professionals and life-changing global opportunities. From rigorous employer verification to transparent visa processing, we guarantee absolute peace of mind for every candidate we place.',
     socials: {
       linkedin: '#https://www.linkedin.com/in/mehaq-safvath-1b3905356/',

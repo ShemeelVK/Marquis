@@ -40,7 +40,7 @@ function App() {
 
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/8921362760" // Replace with actual WhatsApp number including country code (e.g., https://wa.me/447123456789)
+          href="https://wa.me/918921362760?text=Hello%20Marquis%20Overseas,%20I%20would%20like%20to%20speak%20to%20an%20expert!"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#25D366] text-white p-3 sm:p-4 rounded-full shadow-2xl hover:bg-[#128C7E] hover:scale-110 hover:shadow-[#25D366]/50 transition-all duration-300 flex items-center justify-center relative"

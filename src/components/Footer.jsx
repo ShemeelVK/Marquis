@@ -70,11 +70,12 @@ const Footer = () => {
               <div className="flex flex-col items-center text-center p-4 bg-slate-900 rounded-xl border border-slate-800">
                 <MdLocationOn className="text-3xl text-[#D4AF37] mb-3" />
                 <h4 className="text-white font-medium mb-1">Visit Us</h4>
-                <p className="text-sm text-slate-400">Intlex Study Abroad, Cambridge</p>
+                <p className="text-sm text-slate-400">East London Business Centre,<br/>London</p>
               </div>
               <div className="flex flex-col items-center text-center p-4 bg-slate-900 rounded-xl border border-slate-800">
                 <MdPhone className="text-3xl text-[#D4AF37] mb-3" />
                 <h4 className="text-white font-medium mb-1">Call Us</h4>
+                <p className="text-sm text-slate-400">+44 7741992913</p>
                 <p className="text-sm text-slate-400">+91 89213 62760</p>
               </div>
               <div className="flex flex-col items-center text-center p-4 bg-slate-900 rounded-xl border border-slate-800">
