@@ -28,21 +28,21 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="space-y-6 max-w-4xl"
         >
-          <motion.span 
+          <motion.h1 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="inline-block text-[#D4AF37] font-semibold tracking-widest uppercase text-sm md:text-base border border-[#D4AF37]/30 px-4 py-1.5 rounded-full bg-[#D4AF37]/5"
           >
             International Jobs. Trusted Recruitment
-          </motion.span>
+          </motion.h1>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight mt-6">
             Where Ambition Meets <br className="hidden md:block"/> 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F3E5AB]">
               Global Opportunity
             </span>
-          </h1>
+          </h2>
 
           <p className="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-light">
             Connecting skilled professionals with verified employers across the world.
