@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md';
+import { FaInstagram } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const Footer = () => {
@@ -178,7 +179,12 @@ const Footer = () => {
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
           <p>&copy; {new Date().getFullYear()} Marquis Overseas International. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 flex space-x-6">
+          <div className="mt-4 md:mt-0 flex items-center space-x-6">
+            <a href="https://www.instagram.com/marquis_overseas/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+              <FaInstagram className="text-lg group-hover:scale-110 transition-transform" />
+              <span className="hidden sm:inline">Instagram</span>
+            </a>
+            <span className="h-4 w-px bg-slate-800"></span>
             <a href="#" className="hover:text-[#D4AF37] transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-[#D4AF37] transition-colors">Terms of Service</a>
           </div>
